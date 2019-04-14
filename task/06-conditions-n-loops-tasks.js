@@ -1,4 +1,4 @@
-'use strict';
+''use strict';
 
 /**************************************************************************************************
  *                                                                                                *
@@ -30,7 +30,11 @@
  *
  */
 function getFizzBuzz(num) {
-    throw new Error('Not implemented');
+    if (num % 3 === 0 && num % 5 === 0) {return 'FizzBuzz';}
+    if (num % 3 === 0) {return 'Fizz';}
+     if (num % 5 === 0) {return 'Buzz';}
+     if (num % 3 !== 0 || num % 5 !== 0) {return num;}
+    //throw new Error('Not implemented');
 }
 
 
@@ -46,7 +50,9 @@ function getFizzBuzz(num) {
  *   10 => 3628800
  */
 function getFactorial(n) {
-    throw new Error('Not implemented');
+        return (n != 1) ? n * getFactorial(n - 1) : 1;
+    
+   // throw new Error('Not implemented');
 }
 
 
@@ -63,9 +69,18 @@ function getFactorial(n) {
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
-    throw new Error('Not implemented');
-}
+    var res = n1;
+    var ngfgj = res;
+    while (res < n2) {
+      res += 1;
+      ngfgj += res;
+   //console.log(res);
+   
+    }
 
+   // throw new Error('Not implemented');
+   return ngfgj;
+}
 
 /**
  * Returns true, if a triangle can be built with the specified sides a,b,c and false in any other ways.
@@ -166,6 +181,11 @@ function isInsideCircle(circle, point) {
  *   'entente' => null
  */
 function findFirstSingleChar(str) {
+  /*  for (var i = 0; i < str.length; i++) {
+var gjfgf = str.match(/str[i]/)[0];
+if (gjfgf.length > 1) {return null;}
+if (gjfgf.length === 1) {return str[i];}
+    }*/
     throw new Error('Not implemented');
 }
 
@@ -209,8 +229,8 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-    throw new Error('Not implemented');
-}
+    return str.split('').reverse().join("");
+   }
 
 
 /**
@@ -226,7 +246,8 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-    throw new Error('Not implemented');
+    return String(num).split('').reverse().join("");
+    //throw new Error('Not implemented');
 }
 
 
@@ -251,7 +272,12 @@ function reverseInteger(num) {
  *   4916123456789012 => false
  */
 function isCreditCardNumber(ccn) {
-    throw new Error('Not implemented');
+     /*var re16digit=/^\d{16}$/
+if (ccn.search(re16digit)==-1) {return false;}
+else {return true;}*/
+
+
+   throw new Error('Not implemented');
 }
 
 
@@ -271,6 +297,15 @@ function isCreditCardNumber(ccn) {
  */
 function getDigitalRoot(num) {
     throw new Error('Not implemented');
+   /* var fghcd = String(num).split("");
+        var akk = 0;
+    for (var i = 0; i < fghcd.length; i++) {
+        akk += parseInt(fghcd[i]);
+    }
+    if (akk <= 9) {return akk;}
+    if (akk > 9) {
+getDigitalRoot(akk);
+    }*/
 }
 
 
@@ -295,9 +330,31 @@ function getDigitalRoot(num) {
  *   '{)' = false
  *   '{[(<{[]}>)]}' = true 
  */
-function isBracketsBalanced(str) {
+function isBracketsBalanced(text) {
     throw new Error('Not implemented');
-}
+      /*var i,
+                 l=text.length,
+                 char,
+                 last,
+                 stack=[];
+
+         for(i=0; i<l; i++){
+             char=text[i];
+
+             if(char=="{" || char=="("){
+                 stack.push(char);
+             }else if(char=="}" || char==")"){
+                 if(stack.length>0){
+                     last=stack[stack.length-1];
+                     if ((char == '}' && last == "{") || (char == ')' && last == '(')) {
+                         stack.pop();
+                     }
+                 }
+             }
+         }
+         return stack.length==0;*/
+     }
+
 
 
 /**
