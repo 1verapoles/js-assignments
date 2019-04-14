@@ -80,17 +80,15 @@ function doubleArray(arr) {
  *    [-1, 2, -5, -4, 0] => [ 2 ]
  *    [] => [] 
  */
-/*function getArrayOfPositives(arr) {
-   let narr = [];
-   arr.map(function(va, in) {
+
+function getArrayOfPositives(arr) {
+      let narr = [];
+   arr.map(function(va) {
     if (va > 0) {
       narr.push(va);
     }
   });
 return narr;
-}*/
-function getArrayOfPositives(arr) {
-   throw new Error('Not implemented');
 }
 
 /**
@@ -104,15 +102,15 @@ function getArrayOfPositives(arr) {
  *    [ 1, 2, 3, 4, 5 ] => []
  *    [ 'cat, 'dog', 'raccon' ] => [ 'cat', 'dog', 'racoon' ]
  */
-/*function getArrayOfStrings(arr) {
-   return arr.map(function(va, ind) {
-    if (!va instanceof String) {
-arr.splice(ind,1);
+
+function getArrayOfStrings(arr) {
+      var narr = [];
+   arr.map(function(va) {
+    if (typeof va === "string") {
+narr.push(va);
     }
    });
-}*/
-function getArrayOfStrings(arr) {
-   throw new Error('Not implemented');
+return narr;
 }
 
 /**
@@ -261,7 +259,11 @@ function toCsvText(arr) {
  *   [ 10, 100, -1 ]      => [ 100, 10000, 1 ]
  */
 function toArrayOfSquares(arr) {
-   throw new Error('Not implemented');
+      var narr = [];
+   arr.map(function(va) {
+    narr.push(va * va);
+   })
+   return narr;
 }
 
 
@@ -281,19 +283,13 @@ function toArrayOfSquares(arr) {
  */
 
   function getMovingSum(arr) {
-   /*var  rip = [];
-rip[0] = arr[0]; 
-   arr.reduce(function(va, ing) {
-//if (arr[ing - 1]) {
-     var kab = va + arr[ing - 1];
-  if (ing > 0) {rip.push(kab);}
-     return kab;
-        //else {rip.push(va);}
-   }
-    )
-     
-   return rip;*/
-   throw new Error('Not implemented');
+    var narr = [];
+   var gjfgf = arr.reduce(function(akk, va) {
+    narr.push(akk);
+  return akk + va;
+});
+   narr.push(gjfgf);
+  return narr;
 }
 
 /**
@@ -357,20 +353,20 @@ function propagateItemsByPositionIndex(arr) {
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
 function get3TopItems(arr) {
-    /*if (arr.length!==0) {
-      var gj1 = Math.max.apply(null, arr);
-   arr.splice(arr.indexOf(gj1), 1);
-   console.log(arr);
-   var gj2 = Math.max.apply(null, arr);
-   arr.splice(arr.indexOf(gj2), 1);
-   console.log(arr);
-   var gj3 = Math.max.apply(null, arr);
-      console.log(gj1,gj2,gj3);
-      //console.log(typeof gjg);
-      var gjg = Array.of(gj1, gj2, gj3);
-      return gjg;
-} else {return [];}*/
-throw new Error('Not implemented');
+var narr = [];
+function sortArr(a,b){
+  if(a > b)
+    return -1; //или указать число меньше 0 
+  if(a < b)
+    return 1; //или указать цифру больше 0 
+  if(a==b)
+    return 0 ;
+}
+arr.sort(sortArr);
+if (arr[0]) {narr.push(arr[0]);}
+if (arr[1]) {narr.push(arr[1]);}
+if (arr[2]) {narr.push(arr[2]);}
+return narr;
 }
  
 /**  
@@ -408,8 +404,43 @@ function getPositivesCount(arr) {
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
 function sortDigitNamesByNumericOrder(arr) {
-   //return arr.sort();
-    throw new Error('Not implemented');
+  if (arr === []) {return [];} 
+           var narr = arr.map(function(va) {
+      if (va === "zero") {return va = 0;}
+      if (va === "one") {return va = 1;}
+      if (va === "two") {return va = 2;}
+      if (va === "three") {return va = 3;}
+      if (va === "four") {return va = 4;}
+      if (va === "five") {return va = 5;}
+      if (va === "six") {return va = 6;}
+      if (va === "seven") {return va = 7;}
+      if (va === "eight") {return va = 8;}
+      if (va === "nine") {return va = 9;}
+              })
+       function sortArr(a,b){
+  if(a > b)
+    return 1; //или указать число меньше 0 
+  if(a < b)
+    return -1; //или указать цифру больше 0 
+  if(a==b)
+    return 0 ;
+}
+
+        narr.sort(sortArr);
+                var fhdfj = narr.map(function(va) {
+      if (va === 0) {return va = "zero";}
+      if (va === 1) {return va = "one";}
+      if (va === 2) {return va = "two";}
+      if (va === 3) {return va = "three";}
+      if (va === 4) {return va = "four";}
+      if (va === 5) {return va = "five";}
+      if (va === 6) {return va = "six";}
+      if (va === 7) {return va = "seven";}
+      if (va === 8) {return va = "eight";}
+      if (va === 9) {return va = "nine";}
+      })
+                return fhdfj;
+      
 }
 
 /** 
@@ -466,10 +497,16 @@ function getFalsyValuesCount(arr) {
  *    [ true, 0, 1, 'true' ], true => 1
  */
 function findAllOccurences(arr, item) {
-   /*var fhjdc = arr.join().match(/item/g);
-   return fhjdc[0].length;*/
-   throw new Error('Not implemented');
+  //   throw new Error('Not implemented');
+  var gffgj;
+  gffgj = arr.reduce(function(akk, va) {
+if (va === item) {return akk += 1;}
+else {return akk;}
+//console.log(akk);
+  }, 0);
+  return gffgj;
 }
+
 
 /**
  * Concatenates all elements from specified array into single string with ',' delimeter  
@@ -513,6 +550,9 @@ function toStringList(arr) {
  */
 function sortCitiesArray(arr) {
    throw new Error('Not implemented');
+   /*arr.map(function(va, inde) {
+    arr[inde][country]
+   })*/
 }
 
 /**
