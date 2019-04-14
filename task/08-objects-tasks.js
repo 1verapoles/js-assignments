@@ -23,7 +23,17 @@
  *    console.log(r.getArea());   // => 200
  */
 function Rectangle(width, height) {
-    throw new Error('Not implemented');
+    //throw new Error('Not implemented');
+    class Rectangle {
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+        getArea() {
+            return this.width * this.height;
+        }
+    }
+    return new Rectangle(width, height);
 }
 
 
